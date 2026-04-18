@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Video Downloader</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <h1>Local Video Downloader</h1>
+      <p>Enter one or more video URLs, analyze the first link, then download sequentially.</p>
+    </header>
+
+    <section class="panel">
+      <label for="urlInput">Video URLs (one per line)</label>
+      <textarea id="urlInput" placeholder="https://www.youtube.com/watch?v=...\nhttps://www.tiktok.com/..."></textarea>
+      <div class="button-row">
+        <button id="analyzeButton">Analyze</button>
+        <button id="downloadButton" disabled>Download</button>
+      </div>
+    </section>
+
+    <section class="panel info-panel">
+      <div class="info-grid">
+        <div>
+          <strong>Platform</strong>
+          <p id="platformLabel">-</p>
+        </div>
+        <div>
+          <strong>Title</strong>
+          <p id="titleLabel">-</p>
+        </div>
+        <div>
+          <strong>Duration</strong>
+          <p id="durationLabel">-</p>
+        </div>
+      </div>
+
+      <div class="thumbnail-card">
+        <img id="thumbnailPreview" alt="Thumbnail preview" src="" />
+      </div>
+    </section>
+
+    <section class="panel options-panel">
+      <div class="field-group">
+        <label for="formatSelect">Available formats</label>
+        <select id="formatSelect"></select>
+      </div>
+      <div class="field-group radio-group">
+        <label>Mode</label>
+        <label><input type="radio" name="mode" value="video" checked /> Video</label>
+        <label><input type="radio" name="mode" value="audio" /> Audio only (MP3)</label>
+      </div>
+      <div class="field-group">
+        <label><input type="checkbox" id="includeSubs" /> Download subtitles</label>
+      </div>
+      <div class="field-group">
+        <label for="subtitleSelect">Subtitle language</label>
+        <select id="subtitleSelect" disabled></select>
+      </div>
+      <div class="field-group">
+        <label><input type="checkbox" id="embedSubs" disabled /> Embed subtitles into video</label>
+      </div>
+    </section>
+
+    <section class="panel status-panel">
+      <div class="status-line">
+        <span>Status:</span>
+        <strong id="statusText">Idle</strong>
+      </div>
+      <div class="progress-bar" aria-hidden="true">
+        <div id="progressFill"></div>
+      </div>
+      <div id="messageBox" class="message-box"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
