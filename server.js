@@ -24,6 +24,7 @@ function detectPlatform(urlString) {
     if (host.includes('facebook.com') || host.includes('fb.watch')) return 'Facebook';
     if (host.includes('instagram.com')) return 'Instagram';
     if (host.includes('tiktok.com')) return 'TikTok';
+    if (host.includes('https://animeheaven.me/')) return 'animeheaven';
     if (host.includes('twitter.com') || host.includes('x.com')) return 'Twitter/X';
     return 'Unknown';
   } catch (error) {
