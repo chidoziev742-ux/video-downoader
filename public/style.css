@@ -109,13 +109,22 @@ input[type='checkbox'] {
   margin-right: 8px;
 }
 
-select {
+[hidden] {
+  display: none !important;
+}
+
+select,
+input[type='number'] {
   width: 100%;
   border-radius: 12px;
   border: 1px solid var(--border);
   background: #11131d;
   color: var(--text);
   padding: 12px;
+}
+
+#unknownEpisodes p {
+  color: var(--muted);
 }
 
 .info-panel {
